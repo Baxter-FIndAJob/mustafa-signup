@@ -1,0 +1,85 @@
+
+
+tables:
+
+USERS
+--
+Name
+Email
+Password
+
+--
+
+user interfaces:
+-
+LOGIN SCREEN - PUBLIC-FACING
+HOME PAGE - MEMBERS ONLY AREA
+
+--
+
+ACTIONS (api endpoints)
+-
+Login:
+	@param: email / password
+	- test email / password against database
+	- if(good) return USER object and access_token
+	- if(bad) return ERROR MESSAGE
+
+Load Login Screen:
+	@param: url
+	- load gui
+
+Load Admin Screen:
+	@param: url, access_token
+	if(access_token is good) return admin page
+	if(access_token is bad or missing) log out
+
+Logout:
+	Clear access_token
+	Return login screen
+
+--
+
+WORKFLOW 
+-
+
+single developer:
+
+- build GUIs
+- set up database
+- write APIs: first client, then server
+
+
+--
+
+corporate / multiple developers:
+
+OWNER:
+- Tells the manager what to do
+- Approves specs
+- Allocates resources and staff as necessary
+
+
+MANAGER:
+- Defines specs
+- Oversees development and deployment
+- Facilitates scrum / agile workflows
+
+
+FRONT END:
+- design \ build  GUIs
+- write client-side scripts
+
+
+BACK END:
+- set up database
+- write endpoints
+
+
+QA (Quality Assurance):
+- write unit tests
+
+
+SYSADMIN \ NETWORK ADMINISTRATOR
+- deploy
+- maintain \ protect

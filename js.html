@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>JS Example</title>
+		
+		<style>
+			/* CSS */	
+			
+			.image {
+				width: 30px;
+				height: 30px;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+			}
+
+
+		</style>
+
+
+		<!-- LOAD jQUERY LIBRARY -->
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+		<script>
+
+			// THIS IS THE BLOCK OF CODE THAT WE WANT TO RUN WHEN THE BUTTON IS CLICKED
+			handleClick = function(){
+				alert('fire!')
+			}
+
+
+			// THIS IS THE BLOCK OF CODE THAT WE WANT TO RUN WHEN THE PAGE LOADS
+			var loadApp = function(){
+
+				alert('go')
+
+				// Select the HTML element by ID
+				var img = $('.image');
+
+				// when you click it
+				img.click(handleClick);
+
+			}
+
+
+			
+
+			
+			// RUN THIS WHEN THE PAGE HAS LOADED...
+			$(loadApp)
+
+			
+
+		</script>
+	</head>
+	<body>
+		<img class="image" src="https://i.amz.mshcdn.com/3-_M9UcyFx7IYKwNPzYy7w7tloU=/https%3A%2F%2Fblueprint-api-production.s3.amazonaws.com%2Fuploads%2Fvideo_uploaders%2Fdistribution_thumb%2Fimage%2F81545%2F0aa6ee20-cc52-4175-a30b-65e8d5a2d5c5.jpg" />
+	
+	</body>
+</html>

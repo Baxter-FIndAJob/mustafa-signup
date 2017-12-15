@@ -1,0 +1,125 @@
+html, body{
+	margin: 0;
+	padding: 0;
+	background-color: #dcdcdc;
+	min-height: 100%;
+}
+
+.header{
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 50px;
+	background: #3e3e3e;
+}
+
+.pfp{
+	background: #383838;
+	width: 35px;
+	height: 35px;
+	border-radius: 50px;
+	border: 2px solid #333333;
+    position: relative;
+    left: 15px;
+    top: 5px;
+}
+
+.register form{
+	margin: 20px;
+}
+
+.register form div[data-type="input"]{
+	width: 295px;
+	height: 40px;
+}
+
+.register form div input[data-type="text"]{
+	font-family: 'Roboto', sans-serif;
+	border-radius: 5px;
+	border: 0px solid white;
+    margin: 2px 2px;
+    width: 250px;
+    height: 35px;
+    padding-left: 40px;
+    outline: none;
+}
+
+.inputWithIcon i[name="text_icon"]{
+	color: #757575;
+	background-color: #aaa;
+	border-radius: 5px 0px 0px 5px;
+	padding: 5px 5px;
+    position: relative;
+    padding: 11px 4px;
+    position: relative;
+    bottom: 40px;
+    
+}
+
+.inputWithIcon i[name="error_icon"]{
+	color: #e06161;
+	border-radius: 0px 5px 5px 0px;
+	padding: 5px 5px;
+    position: relative;
+    padding: 11px 4px;
+    position: relative;
+    bottom: 40px;
+    left: 218px;
+}
+
+.inputWithIcon i[name="correct_icon"]{
+	color: #85d87c;
+	border-radius: 0px 5px 5px 0px;
+	padding: 5px 5px;
+    position: relative;
+    padding: 11px 4px;
+    position: relative;
+    bottom: 40px;
+    left: 218px;
+}
+
+.messageUpdates div h4{
+	font-family: 'Roboto', sans-serif;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.toggle_button input{
+	background: #e06161;
+	width: 40px;
+	height: 20px;
+	-webkit-appearance: none;
+	border-radius: 20px;
+	cursor: pointer;
+	outline: none;
+	position: absolute;
+}
+
+.toggle_button input:before{
+	content: '';
+	position: absolute;
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border-radius: 50px;
+    margin: 1px 1px;
+    transition: .5s;
+}
+
+.toggle_button input:checked[type="checkbox"]:before{
+	margin: 1px 21px;
+	transition: .5s;
+}
+
+.toggle_button input[type="checkbox"]:checked{
+	transition: .5s;
+	background: #85d87c;
+}
+
+.register form div input[data-type="text"]:focus +i{
+	color: dodgerBlue;
+}
+
+.pfp:hover{
+	background: #5d5d5d;
+}

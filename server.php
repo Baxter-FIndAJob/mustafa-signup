@@ -1,28 +1,59 @@
 <?php
-	$name = "";
-	$email = "";
-	$errors = array();
-	// connect to database
-	$db = new mysqli("localhost", "root", "","test");
 
-	// if the register button is clicker
-	if (isset($_POST["test"])){
-		$name = mysql_real_escape_string($_POST["name_input"]);
-		$email = mysql_real_escape_string($_POST["email_input"]);
-		$password_1 = mysql_real_escape_string($_POST["password1_input"]);
-		$password_2 = mysql_real_escape_string($_POST["password2_input"]);
 
-	if (empty($name)){
-		array_push($errors, "Your Name is required");
+
+	// if an action is requested...
+	if(!empty($_POST['action'])){
+	
+		// what action is it?
+		switch($_POST['action']){
+
+			// is it "login"?
+			case "login" :
+
+				// check input
+				if(empty($_POST['email'])){
+					$message = "No email set.";
+					break;
+				} 
+				if(empty($_POST['password'])){
+					$message = "No password set.";
+					break;
+				} 
+
+
+				extract($_POST);
+
+
+				// connect to server, with user, and select database
+				$db = new mysqli("localhost", "root", "root", "mustafa");
+				
+
+				// write sql
+				$sql = 'SELECT * FROM users where email="' . addslashes($email) . '" AND password="' . addslashes($password) . '"';
+				
+
+
+				// run query
+				$user = $db -> query($sql) -> fetch_object();
+
+
+				// handle it if user isn't found
+				if(!$user) {
+					$message = "User not found.";
+					break;
+				} 
+
+
+				// if user is found, return access token
+				$admin = true;
+
+
+			break;
+
+		}
+
+		
 	}
-	if (empty($email)){
-		array_push($errors, "Your Email is required");
-	}
-	if (empty($password_1)){
-		array_push($errors, "Password is required");
-	}
-	if ($password_1 != $password_2){
-		array_push($errors, "Password verification is invalid");
-	}
-	}
+
 ?>

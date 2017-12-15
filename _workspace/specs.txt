@@ -12,8 +12,8 @@ Password
 
 user interfaces:
 -
-LOGIN SCREEN - PUBLIC-FACING
-HOME PAGE - MEMBERS ONLY AREA
+X LOGIN SCREEN - PUBLIC-FACING
+X HOME PAGE - MEMBERS ONLY AREA
 
 --
 
@@ -21,9 +21,10 @@ ACTIONS (api endpoints)
 -
 Login:
 	@param: email / password
-	- test email / password against database
-	- if(good) return USER object and access_token
-	- if(bad) return ERROR MESSAGE
+	x server-side validation - make sure that I received the variables
+	x test email / password against database
+	x if(good) load admin screen
+	x if(bad) return ERROR MESSAGE
 
 Load Login Screen:
 	@param: url
@@ -83,3 +84,41 @@ QA (Quality Assurance):
 SYSADMIN \ NETWORK ADMINISTRATOR
 - deploy
 - maintain \ protect
+
+--
+
+http://
+localhost
+/cmty/_baxter/mustafa-signup/
+login.php
+
+GET PARAMETERS
+--
+?
+email=rob.korobkin%40gmail.com
+&
+password=s0lidarity
+
+
+POST PARAMETERS
+--
+these don't show up in the url, but are submitted "under the hood"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
